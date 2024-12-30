@@ -1,7 +1,7 @@
 "use client"
 import React, { useState } from 'react'
 import Image from 'next/image';
-import Link from 'next/link'  // Instead of from lucide-react
+import Link from 'next/link'  
 import { AlertCircle, AlertOctagon, AlertTriangle, Briefcase, ChevronDown, ChevronUp, Home, Icon, Layers3, LockIcon, Search, Settings, ShieldAlert, User, Users, X, type LucideIcon } from 'lucide-react';
 import { usePathname } from 'next/navigation';
 import { useAppDispatch, useAppSelector } from '@/app/redux';
