@@ -68,7 +68,7 @@ export interface SearchResults {
 export const api = createApi({
     baseQuery: fetchBaseQuery({ baseUrl: process.env.NEXT_PUBLIC_API_BASE_URL}),
     reducerPath: "api",
-    tagTypes: ["Projects", "Tasks"],
+    tagTypes: ["Projects", "Tasks", "Users"],
     endpoints: (build) => ({
         getProjects: build.query<Project[], void>({
             query: () => 'projects',
@@ -107,9 +107,15 @@ export const api = createApi({
                 {type: "Tasks", id: taskId},
             ]
         }),
+        
         search: build.query<SearchResults, string>({
-            query: (query) => `search?q=${query}`,
-        })
+            query: (query) => `search?query=${query}`,
+        }),
+        
+        getUsers: build.query<User[], void>({
+            query: () => 'users',
+            providesTags: ["Users"]
+        }),
     }),
 });
 
@@ -120,4 +126,5 @@ export const {
     useCreateTaskMutation,
     useUpdateTaskStatusMutation,
     useSearchQuery,
+    useGetUsersQuery,
 } = api; //fetch call that will call the backend
