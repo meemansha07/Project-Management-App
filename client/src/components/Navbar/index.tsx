@@ -3,7 +3,6 @@ import Link from "next/link";
 import { Menu, Moon, Search, Settings, Sun } from "lucide-react"
 import { useAppDispatch, useAppSelector } from '@/app/redux'
 import { setIsDarkMode, setIsSidebarCollapsed } from '@/state';
-import Image from "next/image";
 
 
 const Navbar = () => {
